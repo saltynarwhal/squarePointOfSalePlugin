@@ -1,31 +1,36 @@
 {
-  "name": "helloworld",
-  "displayName": "HelloCordova",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "cordova-android": "^8.1.0",
-    "cordova-ios": "^5.1.1"
-  },
-  "devDependencies": {
-    "cordova-plugin-whitelist": "^1.3.4"
-  },
+  "name": "cordova-plugin-squarePOS",
+  "version": "0.0.1",
+  "description": "An Andoid and ios Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.",
   "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {}
-    },
+    "id": "com.yesco.SquarePlugin",
     "platforms": [
       "android",
       "ios"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltynarwhal/squarePointOfSalePlugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "square",
+    "square pos api",
+    "squareposapi"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Jordan Strong <jstrong@yesco.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saltynarwhal/squarePointOfSalePlugin/issues"
+  },
+  "homepage": "https://github.com/saltynarwhal/squarePointOfSalePlugin"
 }

@@ -1,13 +1,24 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
-    <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
-    <content src="index.html" />
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.yesco.dev.SquarePlugin" version="0.0.1">
+    <name>squarePOSplugin</name>
+
+    <description>An Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,PCI,square,POS,mobilepayments,payments,credit,creditcard</keywords>
+    <repo>https://github.com/saltynarwhal/squarePOSplugin.git</repo>
+    <issue>https://github.com/saltynarwhal/squarePOSplugin/issues</issue>
+
+    <engines>
+      <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/squarePOSplugin.js" name="squarePOSplugin">
+        <clobbers target="window.plugins.squarePOSplugin" />
+    </js-module>
+
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -16,11 +27,57 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+
     <platform name="android">
-        <allow-intent href="market:*" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="squarePOSplugin">
+                <param name="android-package" value="com.saltynarwhal.cordova.plugin.squarePOSplugin"/>
+            </feature>
+        </config-file>
+
+        <framework src="src/android/config.gradle" custom="true" type="gradleReference" />
+        <framework src="com.android.support:appcompat-v7:25.3.1" />
+        <framework src="com.android.support:support-v4:27.0.1" />
+        <source-file src="src/android/squarePOSplugin.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
+        <source-file src="src/android/AlertDialogHelper.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
+
     </platform>
+
     <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="squarePOSplugin">
+                <param name="ios-package" value="squarePOSplugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/squarePOSplugin.h" />
+        <source-file src="src/ios/squarePOSplugin.m" />
+
+        <config-file platform="ios" parent="LSApplicationQueriesSchemes" target="*-Info.plist">
+            <array>
+                <string>square-commerce-v1</string>
+            </array>
+        </config-file>
+
+        <config-file platform="ios" target="*-Info.plist" parent="CFBundleURLTypes">
+            <array>
+                <dict>
+                    <key>CFBundleTypeRole</key>
+                    <string>Editor</string>
+                    <key>CFBundleURLName</key>
+                    <string>com.yesco.ServizioFieldService</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>squarePOSplugin</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+
+
+        <framework src="SquarePointOfSaleSDK" type="podspec" spec="~> 3.3.1" />
     </platform>
-</widget>
+
+</plugin>

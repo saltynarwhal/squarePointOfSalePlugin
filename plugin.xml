@@ -8,8 +8,8 @@
     <license>MIT</license>
 
     <keywords>cordova,android,PCI,square,POS,mobilepayments,payments,credit,creditcard</keywords>
-    <repo>https://github.com/saltynarwhal/squarePOSplugin.git</repo>
-    <issue>https://github.com/saltynarwhal/squarePOSplugin/issues</issue>
+    <repo>https://github.com/saltynarwhal/squarePointOfSalePlugin.git</repo>
+    <issue>https://github.com/saltynarwhal/squarePointOfSalePlugin/issues</issue>
 
     <engines>
       <engine name="cordova" version=">=3.0.0"/>

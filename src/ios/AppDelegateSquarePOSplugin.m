@@ -1,7 +1,9 @@
-#import "AppDelegate+squarePOSplugin.h"
+#import "AppDelegateSquarePOSplugin.h"
 #import <Cordova/CDVAppDelegate.h>
+#import <Cordova/CDVPlugin.h>
+#import <Cordova/CDVAvailability.h>
 
-@implementation CDVAppDelegate
+@implementation AppDelegateSquarePOSplugin
 
 @synthesize window, viewController;
 

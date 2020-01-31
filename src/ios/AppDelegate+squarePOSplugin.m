@@ -1,3 +1,5 @@
+#import "AppDelegate+squarePOSplugin.h"
+
 @implementation CDVAppDelegate
 
 @synthesize window, viewController;

@@ -1,5 +1,3 @@
-#import "CDVAppDelegate.h"
-
 @implementation CDVAppDelegate
 
 @synthesize window, viewController;

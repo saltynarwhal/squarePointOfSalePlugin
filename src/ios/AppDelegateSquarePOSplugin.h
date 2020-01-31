@@ -3,7 +3,7 @@
 #import <SquarePointOfSaleSDK.h>
 #import <Cordova/CDVAppDelegate.h>
 
-@interface CDVAppDelegate+squarePOSplugin : CDVAppDelegate
+@interface AppDelegate : CDVAppDelegate
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
 

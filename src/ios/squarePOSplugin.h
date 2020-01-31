@@ -1,7 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVAvailability.h>
 #import <SquarePointOfSaleSDK.h>
-#import "CDVAppDelegate.h"
 
 @interface squarePOSplugin : CDVPlugin
 
